@@ -43,9 +43,9 @@ var Tweet = Backbone.Model.extend({
    * prototype has your provided properties.
    */
 });
-
 /* Backbone models are pseudoclassically instantiated: */
 var myTweet = new Tweet();
+console.log('This is myTweet:  ', myTweet);
 
 /* Backbone models are meant to store data, so it's important to understand
  * their getters and setters: */
@@ -80,11 +80,11 @@ myTweet.on('change',
   function(/* this event holds information about the change: */ e) {
     // Let ourselves know that something was changed:
     console.info('Something in this tweet model was changed!');
-    console.log(e);
+    console.log('This is the event, ', e);
 
     // Write code to log the changed attribute:
+    console.log('all changed attributes: ', this.changedAttributes());
     console.log(myTweet.get('message'));
-    //console.log('all changed attributes: ', this.changedAttributes());
   }
 );
 
